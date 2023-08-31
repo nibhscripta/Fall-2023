@@ -1,0 +1,9 @@
+*.aux
+main.fdb_latexmk
+main.fls
+main.log
+main.out
+main.synctex.gz
+svg-inkscape
+_minted-main
+hw9.ipynb

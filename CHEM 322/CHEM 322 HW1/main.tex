@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{minted}
+
+
+\definecolor{LightGray}{gray}{0.9}
+
+\graphicspath{ {./assets/} }
+\geometry{margin=0.75in}
+
+\title{CHEM 322 HW 1}
+\author[1]{Mark Levchenko}
+\affil[1]{Group 11}
+\date{24 March 2023}
+
+\begin{document}
+
+\begin{enumerate}
+
+    \item Problem 5
+    
+    \begin{align*}
+        \lambda \nu &= c \\
+        \nu &= \frac{c}{\lambda} \\
+        & c = 3 \cdot 10^{8} \text{ m/s} \\
+        & 1 \text{ eV} = 1.602 \cdot 10^{-19} \text{ J}
+    \end{align*}
+
+    Convert wavelength to frequency and kinetic energy from eV to J.
+
+    Tabulated values:
+
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $\lambda$ (nm) & KE (eV) & $\nu$ (Hz) & KE (J) \\
+        \hline
+        261 & 0.13 & 1.15$\cdot 10^{15}$ & 2.08$\cdot 10^{-20}$ \\
+        250 & 0.33 & 1.20$\cdot 10^{15}$ & 5.29$\cdot 10^{-20}$ \\ 
+        234 & 0.68 & 1.28$\cdot 10^{15}$ & 1.09$\cdot 10^{-19}$ \\
+        218	& 1.08 & 1.38$\cdot 10^{15}$ & 1.73$\cdot 10^{-19}$ \\ 
+        184	& 2.13 & 1.63$\cdot 10^{15}$ & 3.41$\cdot 10^{-19}$ \\
+        \hline
+    \end{tabular}
+
+    \[ E_k = h \nu - \phi \]
+
+    Fitting the data to the above equation yields:
+
+    \[ E_k = 6.68 \cdot 10^{-34} \cdot \nu - 7.48 \cdot 10^{-19} \]
+
+    $\boxed{h = 6.68 \cdot 10^{-34} \text{ J$\cdot$s}}$
+
+    $\phi = 7.48 \cdot 10^{-19}$
+    
+    $\boxed{\phi = 4.67 \text{ eV}}$
+
+\end{enumerate}
+
+\end{document}
