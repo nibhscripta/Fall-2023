@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{minted}
+
+
+\definecolor{LightGray}{gray}{0.9}
+
+\graphicspath{ {./assets/} }
+\geometry{margin=0.75in}
+
+\title{HW}
+\date{}
+
+\begin{document}
+
+% \pagenumbering{gobble}
+
+\begin{enumerate}
+    \item \textbf{Problem 1 (7-1)}
+    
+    1$^{\text{st}}$ condition
+
+    \begin{align*}
+        P_L &= 20 \text{ mm Hg} = 2666 \text{ Pa} \\
+        P_H &= 1 \text{ atm} = 101325 \text{ Pa} \\
+        y_0 &= 0.209 \\
+        y_j &= 1 \text{ ppm} = 1\cdot10^{-6} \\
+        y_j &= y_0 \left(\frac{P_L}{P_H}\right)^j \\
+        \ln\left(\frac{y_j}{y_0}\right) &= \ln\left(\left(\frac{P_L}{P_H}\right)^j\right) \\
+        j &= \frac{\ln\left(\frac{y_j}{y_0}\right)}{\ln\left(\frac{P_L}{P_H}\right)} \\
+        j &= \frac{\ln\left(\frac{1\cdot10^{-6}}{0.209}\right)}{\ln\left(\frac{2666}{101325}\right)} \\
+        \Aboxed{j &= 3.37} \\
+        \Delta n &= j \left(P_H - P_L\right) \frac{V}{RT} \\
+        \Delta n &= 4 \cdot \left(101325 - 2666\right)  \cdot \frac{3.78}{8.314 \cdot 297} \\
+        \Delta n &= 603.8 \text{ mol} \\
+        m &= \frac{603.8 \cdot 28}{1000} \\
+        \Aboxed{m &= 16.9 \text{ kg}}
+    \end{align*}
+
+    2$^{\text{nd}}$ condition
+
+    \begin{align*}
+        P_L &= 30 \text{ mm Hg} = 4000 \text{ Pa} \\
+        P_H &= 1 \text{ atm} = 101325 \text{ Pa} \\
+        y_0 &= 0.209 \\
+        j &= \frac{\ln\left(\frac{1\cdot10^{-6}}{0.209}\right)}{\ln\left(\frac{4000}{101325}\right)} \\
+        \Aboxed{j &= 3.79} \\
+        \Delta n &= j \left(P_H - P_L\right) \frac{V}{RT} \\
+        \Delta n &= 4 \cdot \left(101325 - 4000\right)  \cdot \frac{37}{8.314 \cdot 297} \\
+        \Delta n &= 5830.4 \text{ mol} \\
+        m &= \frac{5830.4 \cdot 28}{1000} \\
+        \Aboxed{m &= 163.3 \text{ kg}}
+    \end{align*}
+
+    \newpage
+    \item \textbf{Problem 2 (7-2)}
+    
+    1$^{\text{st}}$ condition
+
+    \begin{align*}
+        P_H &= 4136 \text{ mm Hg} = 551419 \text{ Pa} \\
+        P_L &= 1 \text{ atm} = 101325 \text{ Pa} \\
+        y_0 &= 0.209 \\
+        j &= \frac{\ln\left(\frac{1\cdot10^{-6}}{0.209}\right)}{\ln\left(\frac{101325}{551419}\right)} \\
+        \Aboxed{j &= 7.23} \\
+        \Delta n &= j \left(P_H - P_L\right) \frac{V}{RT} \\
+        \Delta n &= 8 \cdot \left(551419 - 101325\right)  \cdot \frac{3.78}{8.314 \cdot 297} \\
+        \Delta n &= 5509.3 \text{ mol} \\
+        m &= \frac{5509.3 \cdot 28}{1000} \\
+        \Aboxed{m &= 154.3 \text{ kg}}
+    \end{align*}
+
+    2$^{\text{nd}}$ condition
+
+    \begin{align*}
+        P_H &= 3000 \text{ mm Hg} = 399966 \text{ Pa} \\
+        P_L &= 1 \text{ atm} = 101325 \text{ Pa} \\
+        y_0 &= 0.209 \\
+        j &= \frac{\ln\left(\frac{1\cdot10^{-6}}{0.209}\right)}{\ln\left(\frac{101325}{399966}\right)} \\
+        \Aboxed{j &= 8.92} \\
+        \Delta n &= j \left(P_H - P_L\right) \frac{V}{RT} \\
+        \Delta n &= 9 \cdot \left(399966 - 101325\right)  \cdot \frac{37}{8.314 \cdot 297} \\
+        \Delta n &= 40253 \text{ mol} \\
+        m &= \frac{40253 \cdot 28}{1000} \\
+        \Aboxed{m &= 1127.7 \text{ kg}}
+    \end{align*}
+    
+    \newpage
+    \item \textbf{Problem 3 (7-7)}
+    
+    a.
+
+    \begin{align*}
+        t &= \frac{1800 \cdot 1.89}{5} = 680.4 \text{ s} \\
+        I_S &= 5 \cdot 10^{-7} \\
+        Q &= I_S t \\
+        Q &= 5 \cdot 10^{-7} \cdot 680.4 \\
+        \Aboxed{Q &= 3.40\cdot10^{-4} \text{ C}} \\
+        J &= \frac{Q^2}{2C} \\
+        J &= \frac{\left(3.40\cdot10^{-4}\right)^2}{2\cdot8.54\cdot10^{-11}} \\
+        \Aboxed{J &= 6.77\cdot10^{2} \text{ J}} \\
+        \Aboxed{J &= 6.77\cdot10^{5} \text{ mJ}}
+    \end{align*}
+
+    Above 10 mJ MIE for dust.
+
+    b.
+
+    \begin{align*}
+        I_S &= 5 \cdot 10^{-5} \\
+        Q &= I_S t \\
+        Q &= 5 \cdot 10^{-5} \cdot 680.4 \\
+        \Aboxed{Q &= 3.40\cdot10^{-2} \text{ C}} \\
+        J &= \frac{Q^2}{2C} \\
+        J &= \frac{\left(3.40\cdot10^{-2}\right)^2}{2\cdot8.54\cdot10^{-11}} \\
+        \Aboxed{J &= 6.77\cdot10^{6} \text{ J}} \\
+        \Aboxed{J &= 6.77\cdot10^{9} \text{ mJ}}
+    \end{align*}
+
+    Above 10 mJ MIE for dust.
+    
+\end{enumerate}
+
+\end{document}

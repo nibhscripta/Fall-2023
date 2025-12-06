@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{minted}
+
+
+\definecolor{LightGray}{gray}{0.9}
+
+\graphicspath{ {./assets/} }
+\geometry{margin=0.75in}
+
+\title{HW}
+\date{}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+Problem 5
+    
+\begin{align*}
+    C_{\text{ppm}} &= 0.0825 \frac{T}{PM} \text{(mg/m$^3$)} \\
+    \text{(mg/m$^3$)} &= \frac{C_{\text{ppm}}PM}{0.0825T} \\
+    \text{(mg/m$^3$)} &= \frac{1 \cdot 1 \cdot 70.9}{0.08205 \cdot 298.15} \\
+    \text{(mg/m$^3$)} &= 2.89 \\ 
+    \intertext{Assume F-stability, u=2ms/, rural}
+    \sigma_y &= 0.04x\left(1+0.0001x\right)^{-1/2} \\
+    \sigma_y &= 0.04\cdot300\left(1+0.0001\cdot300\right)^{-1/2} \\
+    \sigma_y &= 11.8 \\
+    \sigma_z &= 0.016x\left(1+0.0003x\right)^{-1} \\
+    \sigma_z &= 0.016\cdot300\left(1+0.0003\cdot300\right)^{-1} \\
+    \sigma_z &= 4.4 \\
+    C &= \frac{Q_m}{\pi\sigma_y\sigma_zu} \\
+    Q_m &= C\pi\sigma_y\sigma_zu \\
+    Q_m &= 2.89 \cdot \pi \cdot 11.8 \cdot 4.4 \cdot 2 \\
+    Q_m &= 948 \text{ mg/s} \\
+    Q_m &= C_0 AP \sqrt{\frac{\gamma g_c M}{R_gT}\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{\gamma-1}}} \\
+    \frac{948}{1000000} &= 1 \cdot A \cdot 51\cdot10^5 \sqrt{\frac{1.33\cdot1\cdot70.9}{8.314\cdot1000\cdot298}\left(\frac{2}{1.33+1}\right)^{\frac{1.33+1}{1.33-1}}} \\
+    A &= 5.166 \cdot 10^{-8} \text{ m$^2$} \\
+    A &= \frac{\pi}{4} D^2 \\
+    D &= \sqrt{\frac{4A}{\pi}} \\
+    D &= \sqrt{\frac{4\cdot5.166 \cdot 10^{-8}}{\pi}} \\
+    D &= 2.56\cdot 10^{-4} \text{ m} \\
+    \Aboxed{D &= 0.256 \text{ mm}}
+\end{align*}
+
+\end{document}

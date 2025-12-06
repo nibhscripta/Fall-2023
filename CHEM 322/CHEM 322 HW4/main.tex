@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{minted}
+
+
+\definecolor{LightGray}{gray}{0.9}
+
+\graphicspath{ {./assets/} }
+\geometry{margin=0.5in}
+
+\title{HW}
+\date{}
+
+\begin{document}
+
+\begin{enumerate}
+
+    \newpage
+    \item Problem 1 (4.10)
+    
+    \begin{align*}
+        E &= J \left(J+1\right) \frac{\hbar^2}{2I} \\
+        I &= \mu R^2 \\
+        \frac{I}{\mu} &= \frac{1}{m_1} + \frac{1}{m_2} \\
+        \mu_m &= \frac{m_1m_2}{m_1+m_2} \\
+        I &= \frac{\left(14 \cdot 10^{-3}\right)^2}{28\cdot10^{-3}} \frac{1}{6.022\cdot10^{23}} \left(1.098\cdot10^{-10}\right) \\
+        I &= 1.401\cdot10^{-46} \\
+        J \left(J+1\right) &= 4 \left(4+1\right) = 20 \\
+        E &= \frac{20 \left(6.625\cdot10^{-34}\right)^2}{4\pi^2\cdot2\cdot1.401\cdot10^{-46}} \\
+        E &= 7.94\cdot10^{-22} \\
+        \frac{3}{2}k_BT &= \frac{3}{2} \cdot 1.38\cdot10^{-23} \cdot 400 \\
+        \frac{3}{2}k_BT &= 8.828\cdot10^{-21} \\
+        \frac{E}{\frac{3}{2}k_BT} &= \frac{7.94\cdot10^{-22}}{8.828\cdot10^{-21}} \\
+        \Aboxed{\frac{E}{\frac{3}{2}k_BT} &= 0.096}
+    \end{align*}
+
+    \newpage
+    \item Problem 2 (4.11)
+    
+    a.
+    
+    \begin{align*}
+        \Delta E &= h\nu \\
+        \Delta E &= hc\tilde{\nu} \\
+        E &= J(J+1)\frac{\hbar^2}{2I} \\
+        \Delta E &= \frac{\hbar^2}{2I} \left[J_1(J_1+1)-J_2(J_2+1)\right] \\
+        \hbar &= \frac{h}{2\pi} \\
+        hc\tilde{\nu} &= \frac{\left(\frac{h}{2\pi}\right)^2}{2I} \left[J_1(J_1+1)-J_2(J_2+1)\right] \\
+        & J_1 = 2 \\
+        & J_2 = 1 \\
+        hc\tilde{\nu} &= \frac{h^2}{8\pi I} \left[2(2+1)-1(1+1)\right] \\
+        I &= \frac{h}{2\pi c\tilde{\nu}} \\
+        & \nu = 7.71 \text{ cm$^{-1}$} \\
+        & c = 3\cdot10^{10} \\
+        I &= \frac{6.626\cdot10^{-34}}{2\pi \cdot 3\cdot10^{10} \cdot 7.71} \\
+        \Aboxed{I &= 1.451\cdot10^{-46} \text{ kg$\cdot$m$^2$}}
+    \end{align*}
+
+    b. 
+
+    \begin{align*}
+        \intertext{CO reduced mass}
+        \mu &= \frac{m_1m_2}{m_1+m_2} \\
+        \mu &= \frac{12 \cdot 16}{12+16} \cdot \frac{1}{6.022\cdot10^{23}} \cdot \frac{1}{1000} \\
+        \mu &= 1.139 \cdot 10^{-26} \\
+        \intertext{Reduced mass from inertial moment}
+        I &= \mu R^2 \\
+        \mu &= \frac{I}{R^2} \\
+        & R = 1.1281\cdot10^{-10} \\
+        \mu &= \frac{1.451\cdot10^{-46}}{\left(1.1281\cdot10^{-10}\right)^2} \\
+        \mu &= 1.140 \cdot 10^{-26}
+    \end{align*}
+
+    The two masses are approximately the same. This molecule is $^{12}$C$^{16}$O.
+    
+    \newpage
+    \item Problem 3
+    
+    a. First R branch peak corresponds to V,J (0,0) $\rightarrow$ (1,1).
+
+    b. The missing peak is the Q-branch which is J=0 which is not allowed.
+
+    c.
+
+    \begin{align*}
+        4B &= 2321 - 2295 = 26 \\
+        B &= \frac{26}{4} = \frac{6.5}{5.034\cdot10^{22}} = 1.29\cdot10^{-22} \text{ J} \\
+        B &= \frac{\hbar^2}{2I} \\
+        I &= \frac{\hbar^2}{2B} \\
+        I &= \frac{\left(1.04\cdot10^{-34}\right)^2}{2\cdot1.29\cdot10^{-22}} = 4.27\cdot10^{-47} \\
+        \mu &= \frac{1\cdot127}{1+127} = \frac{0.9922}{6.022\cdot10^{26}} \\
+        \mu &= 1.648\cdot10^{-27} \text{ kg} \\
+        I &= \mu R^2 \\
+        R &= \sqrt{\frac{I}{\mu}} \\
+        R &= \sqrt{\frac{4.27\cdot10^{-47}}{1.648\cdot10^{-27}}} \\
+        \Aboxed{R &= 1.61\cdot10^{-10} \text{ m}}
+    \end{align*}
+
+    d. Q branch line is halfway between the peaks 2295 cm$^{-1}$ and 2321 cm$^{-1}$.
+
+    \begin{align*}
+        \tilde{\nu} &= 2308 \text{ cm$^{-1}$} \\
+        \nu &= c \tilde{\nu} \\
+        \omega &= 2\pi \nu \\
+        \omega &= 2\pi c \tilde{\nu} \\
+        \omega &= \sqrt{\frac{k}{\mu}} \\
+        k &= \omega^2\mu \\
+        k &= \left(2\pi c \tilde{\nu}\right)^2\mu \\
+        k &= \left(2\pi \cdot 3\cdot10^{10} \cdot 2308\right)^2 \cdot 1.648\cdot10^{-27} \\
+        \Aboxed{k &= 311.9 \text{ N/m}}
+    \end{align*}
+
+    e. Replacing H with D would increae the reduced mass which would decrease B and decrease the vibrational frequency. Decreasing B would decrease the space between peaks. Decreasing the vibrational frequency would shift the wavenumbers of the whole spectrum down.
+
+    \newpage
+    \item Problem 4
+    
+    \begin{align*}
+        \Delta E &= \Delta n^2 \frac{h^2}{8mL^2} \\
+        \lambda &= \frac{hc}{\Delta E} \\
+        \lambda &= \frac{hc}{\Delta n^2 \frac{h^2}{8mL^2}} = \frac{8cmL^2}{\Delta n^2 h} \\
+        \lambda &= \frac{8 \cdot 3\cdot10^8 \cdot 9.11\cdot10^{-31} \cdot 2.64\cdot10^{-9}}{\left(12^2-11^2\right) \cdot 6.626\cdot10^{-34}} \\
+        \lambda &= 1\cdot10^{-6} \text{ m} \\
+        \Aboxed{\lambda &= 1000 \text{ nm}} \\
+        \Aboxed{\lambda &= 1 \text{ $\mu$m}}
+    \end{align*}
+
+\end{enumerate}
+
+\end{document}

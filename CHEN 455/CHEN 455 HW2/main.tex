@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{minted}
+
+
+\definecolor{LightGray}{gray}{0.9}
+
+\graphicspath{ {./assets/} }
+\geometry{margin=0.75in}
+
+\title{HW}
+\date{}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+Problem 4
+    
+\begin{align*}
+    C_{\text{ppm}} &= \frac{Q_m R_g T}{k Q_v P M} \cdot 10^6 \\
+    Q_m &= \frac{C_{\text{ppm}} k Q_v P M}{R_g T} \cdot 10^{-6} \\
+    & C_{\text{ppm}} = 10 \\
+    & P = 1 \text{ atm} \\
+    & T = 80 ^\circ\text{F} = 540 ^\circ\text{R} \\
+    & Q_v = 2000 \text{ ft$^3$/min} \\
+    & R_g = 0.7302 \text{ ft$^3 \cdot$atm/lb-mole/$^\circ$R} \\
+    & k = \frac{1}{8} \\
+    & M = 34 \text{ lb-mole/lb} \\
+    Q_m &= \frac{10 \cdot \frac{1}{8} \cdot \frac{2000}{60} \cdot 1 \cdot 34}{0.7302 \cdot 540} \cdot 10^{-6} \\
+    Q_m &= 3.59 \cdot 10^{-6} \text{ lb/s} \\
+    Q_m &= C_0 A P_0 \sqrt{\frac{\gamma g_c M}{R_g T_0} \left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}}} \\
+    A &= \frac{Q_m }{C_0 P_0 \sqrt{\frac{\gamma g_c M}{R_g T_0} \left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}}}} \\
+    & C_0 = 1 \\
+    & P_0 = 100 \text{ psig} = 114.7 \text{ psig} \\
+    & \gamma = 1.3 \\
+    & R_g = 10.73 \text{ ft$^3 \cdot$atm/lb-mole/$^\circ$R} \\
+    & g_c = 31.174 \text{ lb$_{m}\cdot$ft/lb$_f$/s$^2$} \\
+    A &= \frac{3.59 \cdot 10^{-6}}{1 \cdot 114.7 \cdot \sqrt{\frac{1.3 \cdot 32.174 \cdot 34}{144 \cdot 10.73 \cdot 540} \left(\frac{2}{1.3 + 1}\right)^{\frac{1.3 + 1}{1.3 - 1}}}} \\
+    A &= 1.29 \cdot 10^{-6} \text{ in$^2$} \\
+    A &= \frac{1}{4}\pi D^2 \\
+    D &= \sqrt{\frac{4 A}{\pi}} \\
+    D &= \sqrt{\frac{4 \cdot 1.29 \cdot 10^{-6}}{\pi}} \\
+    \Aboxed{D &= 0.00128 \text{ in}}
+\end{align*}
+
+\end{document}

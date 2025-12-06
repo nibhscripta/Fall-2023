@@ -1,0 +1,225 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{minted}
+
+
+\definecolor{LightGray}{gray}{0.9}
+
+\graphicspath{ {./assets/} }
+\geometry{margin=0.5in}
+
+\title{HW}
+\date{}
+
+\begin{document}
+
+\begin{enumerate}
+
+    \newpage
+    \item Problem 1 (6.2)
+    
+    a.
+
+    \begin{align*}
+        89.5 \cdot \frac{1}{0.0440} &= 2034 \text{ mol/m$^3$} \\
+        V_m &= \frac{1}{2034} = 4.910\cdot10^{-4} \text{ m$^3$/mol} \\
+        b &= 4.29\cdot10^{-5} \\
+        a &= 3.66\cdot10^{-6} \\
+        P &= \frac{RT}{V_m-b} - \frac{a}{V_m^2} \\
+        P &= \frac{8.314\cdot10^{-5}\cdot600}{4.910\cdot10^{-4}-4.29\cdot10^{-5}} - \frac{3.66\cdot10^{-6}}{\left(4.910\cdot10^{-4}\right)^2} \\
+        \Aboxed{P &= 96.1 \text{ bar}}
+    \end{align*}
+
+    b. 
+
+    \begin{align*}
+        P &= \frac{RT}{V_m} \\
+        P &= \frac{8.314\cdot10^{-5}\cdot600}{4.910\cdot10^{-4}} \\
+        \Aboxed{P &= 101.5 \text{ bar}}
+    \end{align*}
+
+    Ideal gas pressure is higher than the Van der Waals equation.
+    
+    \newpage
+    \item Problem 2 (6.4)
+    
+    a.
+
+    \begin{align*}
+        \bar{v} &= \sqrt{\frac{8k_BT}{\pi m}} \\
+        m &= 32.07 + 6\cdot19 = 146.05 \text{ g/mol} = 146.05 \cdot \frac{1}{6.022\cdot10^{23}} \cdot \frac{1}{1000} = 2.43\cdot10^{-25} \\
+        \bar{v} &= \sqrt{\frac{8k_B\cdot400}{\pi \cdot 2.43\cdot10^{-25}}} \\
+        \Aboxed{\bar{v} &= 241 \text{ m/s}}
+    \end{align*}
+
+    b.
+
+    \begin{align*}
+        m &= 0.028 \text{ kg/mol} = 4.65\cdot10^{-26} \\
+        \bar{v} &= \sqrt{\frac{8k_B\cdot400}{\pi \cdot 4.65\cdot10^{-26}}} \\
+        \Aboxed{\bar{v} &= 550 \text{ m/s}}
+    \end{align*}
+
+    c.
+
+    \begin{align*}
+        550 &= \sqrt{\frac{8k_B\cdot T}{\pi \cdot 2.43\cdot10^{-25}}} \\
+        \Aboxed{T &= 2086 \text{ K}}
+    \end{align*}
+    
+    \newpage
+    \item Problem 3 (6.6)
+    
+    a.
+
+    Given the side length = 20\AA, distance required before n particels hits the same wall again = 40\AA.
+
+    \begin{align*}
+        \frac{1}{2} mv^2 &= \frac{3}{2} k_BT \\
+        v^2 &= \frac{3k_BT}{m} \\
+        v_x^2 &= \frac{3k_BT}{m} \cdot \frac{1}{3} \\
+        v_x &= \sqrt{\frac{k_BT}{m}} \\
+        \frac{d}{t} &= \sqrt{\frac{k_BT}{m}} \\
+        \frac{1}{t} &= \sqrt{\frac{k_BT}{m}} \cdot \frac{1}{d} \\
+        \frac{1}{t} &= \sqrt{\frac{k_B \cdot 300}{\frac{0.028}{6.022\cdot10^{23}}}} \cdot \frac{1}{40\cdot10^{-10}} \\
+        \Aboxed{\frac{1}{t} &= 7.46\cdot10^{10} \text{ collisions/s}}
+    \end{align*}
+
+    b.
+
+    momentum change = $2mv_x$
+
+    \begin{align*}
+        2mv_x &= 2\cdot\frac{0.028}{6.022\cdot10^{23}} \cdot \sqrt{\frac{k_B \cdot 300}{\frac{0.028}{6.022\cdot10^{23}}}} \\
+        \Aboxed{2mv_x &= 2.78\cdot10^{-23} \text{ kg m/s}}
+    \end{align*}
+
+    c.
+
+    \begin{align*}
+        P &= \frac{2mv_x}{d^2 t} \\
+        P &= \frac{2.78\cdot10^{-23}}{\left(20\cdot10^{-10}\right)^2 \cdot \frac{1}{7.46\cdot10^{10}}} \\
+        \Aboxed{P &= 5.19\cdot10^5 \text{ Pa}}
+    \end{align*}
+
+    d.
+
+    \begin{align*}
+        P &= \frac{nk_BT}{V} \\
+        P &= \frac{1 \cdot k_B \cdot 300}{\left(20\cdot10^{-10}\right)^3} \\
+        \Aboxed{P &= 5.19\cdot10^5 \text{ Pa}}
+    \end{align*}
+    
+    \newpage
+    \item Problem 4 (6.8)
+    
+    a.
+
+    \begin{align*}
+        f(v) &= 4\pi \left(\frac{m}{2\pi k_BT}\right)^{3/2}v^2 \exp\left(\frac{-mv^2}{2k_BT}\right) \\
+        \frac{df(v)}{dv} &= 0 \\
+        \frac{df(v)}{dv} &= 4\pi \left(\frac{m}{2\pi k_BT}\right)^{3/2} \left(v^2\cdot\frac{-2mv}{2k_BT}\cdot\exp\left(\frac{-mv^2}{2k_BT}\right) + 2v\cdot\exp\left(\frac{-mv^2}{2k_BT}\right)\right) \\
+        0 &= v^2\cdot\frac{-mv}{k_BT} + 2v \\
+        \frac{mv^3}{k_BT} &= 2v \\
+        mv^2 &= 2k_BT \\
+        \Aboxed{v &= \sqrt{\frac{2k_BT}{m}}}
+    \end{align*}
+
+    b.
+
+    \begin{align*}
+        v &= \sqrt{\frac{2k_B\cdot693}{\frac{0.032}{6.022\cdot10^{23}}}} \\
+        \Aboxed{v &= 600 \text{ m/s}}
+    \end{align*}
+    
+    \newpage
+    \item Problem 5 (6.9)
+    
+    a.
+
+    \begin{align*}
+        E &= 600 \cdot 1.6\cdot10^{-19} = 9.6\cdot10^{-17} \text{ J} \\
+        v &= \sqrt{\frac{2\cdot9.6\cdot10^{-17}}{\frac{0.028}{6.022\cdot10^{23}}}} \\
+        \Aboxed{v &= 6.42\cdot10^4 \text{ m/s}}
+    \end{align*}
+
+    b.
+
+    \begin{align*}
+        \bar{v} &= \sqrt{\frac{8k_BT}{\pi m}} \\
+        T &= \frac{\pi m}{8k_B} \cdot\bar{v}^2 \\
+        T &= \frac{\pi \cdot\frac{0.028}{6.022\cdot10^{23}}}{8k_B} \cdot \left(6.42\cdot10^4\right)^2 \\
+        \Aboxed{T &= 5.46\cdot10^6 \text{ K}}
+    \end{align*}
+    
+    \newpage
+    \item Problem 6 (6.12)
+    
+    \begin{align*}
+        F &= \frac{P}{\sqrt{2\pi m k_BT}} \\
+        F &= \frac{10^{-8}\cdot10^5}{\sqrt{2\pi \cdot \frac{0.028}{6.022\cdot10^{23}} k_B\cdot300}} \\
+        \Aboxed{F &= 2.8\cdot10^{19} \text{ m$^{-2}$ s$^{-1}$}}
+    \end{align*}
+    
+    \newpage
+    \item Problem 7 (6.14)
+    
+    a.
+
+    \begin{align*}
+        Z &= \sqrt{2} \sigma \sqrt{\frac{8k_BT}{\pi m}} \frac{P}{k_BT} \\
+        Z &= \sqrt{2}\cdot0.93\cdot10^{-18}\cdot\sqrt{\frac{8k_B\cdot 300}{\pi\cdot\frac{2\cdot0.0355}{6.022\cdot10^{23}}}}\cdot\frac{0.1\cdot10^5}{k_B\cdot300} \\
+        Z &= 9.5\cdot10^8 \text{ molecule$^{-1}$ s$^{-1}$}\\
+        \text{collisions} &= 9.5\cdot10^8 \cdot 20 \\
+        \Aboxed{\text{collisions} &= 1.9\cdot10^{10} \text{ molecule$^{-1}$}}
+    \end{align*}
+
+    b.
+
+    \begin{align*}
+        \bar{v} &= \sqrt{\frac{8k_B\cdot300}{\pi \cdot\frac{2\cdot0.0355}{6.022\cdot10^{23}}}} \\
+        \Aboxed{\bar{v} &= 299 \text{ m/s}}
+    \end{align*}
+
+    c.
+
+    \begin{align*}
+        \lambda &= \frac{k_BT}{\sqrt{2} \sigma P} \\
+        \lambda &= \frac{k_B\cdot300}{\sqrt{2}\cdot0.93\cdot10^{-18}\cdot0.1\cdot10^5} \\
+        \Aboxed{\lambda &= 3.15\cdot10^{-7} \text{m}} \\
+        \lambda &= \frac{\bar{v}}{Z} \\
+        \lambda &= \frac{299}{9.5\cdot10^8} \\
+        \Aboxed{\lambda &= 3.15\cdot10^{-7} \text{m}}
+    \end{align*}
+    
+    \newpage
+    \item Problem 8 (6.19)
+    
+    \begin{align*}
+        n &= \frac{PV}{k_BT} \\
+        -\frac{dn}{dt} &= \frac{-V}{k_BT} \frac{dP}{dt} = FA = \frac{PA}{\sqrt{2\pi mk_BT}} \\
+        \frac{dP}{dt} &= \frac{-PAk_BT}{V\sqrt{2\pi mk_BT}} \\
+        \int_{P_0}^P \frac{dP}{P} &= \int_0^t -\frac{A}{V} \sqrt{\frac{k_BT}{2\pi m}} dt \\
+        \ln\left(\frac{P}{P_0}\right) &= -\frac{A}{V} \sqrt{\frac{k_BT}{2\pi m}} t \\
+        & A = \frac{1}{100^2} = 0.001 \\
+        & V = \frac{4}{3} \cdot \pi \cdot 0.1^3 = 0.00419 \\
+        \ln\left(\frac{10^{-4}}{10}\right) &= -\frac{0.001}{0.00419} \sqrt{\frac{k_B\cdot300}{2\pi \frac{0.018}{6.022\cdot10^{23}}}} t \\
+        \Aboxed{t &= 3.25 \text{ s}}
+    \end{align*}
+    
+    
+
+\end{enumerate}
+
+\end{document}

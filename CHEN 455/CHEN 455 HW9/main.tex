@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{minted}
+
+
+\definecolor{LightGray}{gray}{0.9}
+
+\graphicspath{ {./assets/} }
+\geometry{margin=0.75in}
+
+\title{HW}
+\date{}
+
+\begin{document}
+
+\begin{enumerate}
+    \item \textbf{Problem 1 (9-2)}
+    
+    \begin{enumerate}
+        \item The following equipment needs pressure relief: the 2 PD pumps, the 2 heat exchangers, the reboiler, the still, and the drum.
+        
+        \item Relief scenarios:
+        
+        \begin{enumerate}
+            \item[-] PD pumps: outlet is blocked in, liquid service.
+            \item[-] Heat exchanger: outlet is blocked in, liquid service.
+            \item[-] Reboiler: high temperature leading to overpressure, vapor service.
+            \item[-] Still: high temperature leading to overpressure, vapor service.
+            \item[-] Drum: high level leading to overfill or overpressure, liquid service.
+        \end{enumerate}
+
+        \item Type of relief:
+        
+        \begin{enumerate}
+            \item[-] PD pumps: spring valve.
+            \item[-] Heat exchanger: spring valve.
+            \item[-] Reboiler: rupture disk followed by spring valve.
+            \item[-] Still: rupture disk followed by spring valve.
+            \item[-] Drum: rupture disk followed by spring valve.
+        \end{enumerate}
+
+    \end{enumerate}
+
+    \newpage
+    \item \textbf{Problem 2 (10-2)}
+    
+    \begin{align*}
+        P_o &= \frac{5}{50} = 10\% \\
+        K_p &= 0.2533 + 0.03632 P_o \\
+        K_p &= 0.2533 + 0.03632 \cdot 10 = 0.6165 \\
+        A &= \frac{1}{38} \cdot \frac{Q_v}{C_0 K_v K_p K_b} \sqrt{\frac{\rho/\rho_{ref}}{1.25P_s-P_b}} \\
+        A &= \frac{1}{38} \cdot \frac{100}{0.65 \cdot 1 \cdot 1 \cdot 0.6165} \sqrt{\frac{1}{1.25\cdot50-5}} \\
+        A &= 0.866 \\
+        D &= \sqrt{\frac{4 A}{\pi}} \\
+        D &= \sqrt{\frac{4 \cdot 0.866}{\pi}} \\
+        \Aboxed{D &= 1.05 \text{ in}}
+    \end{align*}
+
+    \newpage
+    \item \textbf{Problem 3 (10-3)}
+    
+    \begin{align*}
+        \xi &= 519.5 \sqrt{\gamma \left(\frac{2}{\gamma + 1}\right)^{\left(\gamma+1\right)/\left(\gamma-1\right)}} \\
+        \xi &= 519.5 \sqrt{1.3 \left(\frac{2}{1.3 + 1}\right)^{\left(1.3+1\right)/\left(1.3-1\right)}} \\
+        \xi &= 346.6 \\
+        P_b &= 17.7 \% \\
+        K_b &= 1 \\
+        P &= 100 \cdot 1.1 + 14.7 = 124.7 \\
+        A &= \frac{Q_m}{C_0 \xi K_b P} \sqrt{\frac{T z}{M}} \\ 
+        A &= \frac{50}{0.975 \cdot 346.6 \cdot 1 \cdot 124.7} \sqrt{\frac{559.7 \cdot 1}{28}} \\
+        A &= 0.005305 \\ 
+        D &= \sqrt{\frac{4 \cdot 0.005305}{\pi}} \\
+        \Aboxed{D &= 0.08218 \text{ in}}
+    \end{align*}
+
+    \newpage
+    \item \textbf{Problem 4 (10-4)}
+    
+    \begin{align*}
+        \Delta P &= 100 - 5 + 10 = 105 \\
+        A &= \frac{Q_v}{38 C_0} \sqrt{\frac{\rho/\rho_{ref}}{\Delta P}} \\
+        A &= \frac{500}{38 \cdot 0.61} \sqrt{\frac{1.2}{105}} \\
+        A &= 2.31 \\
+        D &= \sqrt{\frac{4 \cdot 2.31}{\pi}} \\
+        \Aboxed{D &= 1.71 \text{ in}}
+    \end{align*}
+
+    \newpage
+    \item \textbf{Problem 5 (10-5)}
+    
+    \begin{align*}
+        \xi &= 519.5 \sqrt{1.4 \left(\frac{2}{1.4 + 1}\right)^{\left(1.4+1\right)/\left(1.4-1\right)}} \\
+        \xi &= 355.7 \\
+        P &= 100 \cdot 1.1 + 14.7 = 124.7 \\
+        A &= \frac{Q_m}{\xi P} \sqrt{\frac{Tz}{M}} \\
+        A &= \frac{100}{355.7 \cdot 124.7} \sqrt{\frac{559.7 \cdot 1}{28}} \\
+        A &= 0.01 \\
+        D &= \sqrt{\frac{4 \cdot 0.01}{\pi}} \\
+        \Aboxed{D &= 0.113 \text{ in}}
+    \end{align*}
+    
+\end{enumerate}
+
+\end{document}
