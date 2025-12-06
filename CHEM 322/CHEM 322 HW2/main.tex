@@ -1,0 +1,171 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{minted}
+
+
+\definecolor{LightGray}{gray}{0.9}
+
+\graphicspath{ {./assets/} }
+\geometry{margin=0.75in}
+
+\title{HW}
+\date{}
+
+\begin{document}
+
+\begin{enumerate}
+
+    \newpage
+    \item Problem 1
+    
+    a.
+
+    \begin{align*}
+        \text{function} &= e^{-x/2} \\
+        \text{operator} &= \frac{d^2}{dx^2} - x^2 \\
+        \left(\frac{d^2}{dx^2} - x^2\right) e^{-x/2} &= \frac{e^{-x/2}}{4} - x^2 e^{-x/2}
+    \end{align*}
+
+    $\boxed{\text{Not an eigenfunction.}}$
+
+    b.
+
+    \begin{align*}
+        \text{function} &= \cos\left(4\phi\right) \\
+        \text{operator} &= \frac{d^2}{d\phi^2} \\
+        \frac{d^2}{d\phi^2} \left(\cos\left(4\phi\right)\right) &= -16 \cos\left(4\phi\right)
+    \end{align*}
+
+    This function is an eigenfunction.
+
+    $\boxed{\text{eigenvalue} = -16}$
+
+    c.
+
+    \begin{align*}
+        \text{function} &= \sin\theta \cos\theta \\
+        \text{operator} &= \frac{1}{\sin\theta} \frac{d}{d\theta}\left(\sin\theta 
+        \frac{d}{d\theta}\right) \\
+        \frac{1}{\sin\theta} \frac{d}{d\theta}\left(\sin\theta 
+        \frac{d}{d\theta}\right) \left(\sin\theta \cos\theta\right) &= \frac{1}{\sin\theta} \frac{d}{d\theta} \left(\sin\theta\cos^2\theta - \sin^2\theta\right) \\
+        &= \frac{1}{\sin\theta} \left(\cos^3\theta - 5\cos\theta\sin^2\theta \right)
+    \end{align*}
+
+    $\boxed{\text{Not an eigenfunction.}}$
+
+    \newpage
+    \item Problem 2 (3.1)
+    
+    \begin{align*}
+        \psi &= e^{-bx^2} \\
+        \int_{-\infty}^{\infty} \psi^*\psi dx &= \int_{-\infty}^{\infty} e^{-2bx^2} dx \\
+        &= 2 \cdot \int_{0}^{\infty} e^{-2bx^2} dx \\
+        \int_{0}^{\infty} e^{-2bx^2} dx &= \frac{1}{2} \sqrt{\frac{\pi}{2b}} \\
+        \int_{-\infty}^{\infty} \psi^*\psi dx &= \sqrt{\frac{\pi}{2b}} \\
+        \psi_{\text{norm}} &= c e^{-bx^2} \\
+        c^2 \int_{-\infty}^{\infty} e^{-2bx^2} dx &= 1 \\
+        c^2 &= \frac{1}{\int_{-\infty}^{\infty} e^{-2bx^2} dx} \\
+        c^2 &= \frac{1}{\sqrt{\frac{\pi}{2b}}} \\
+        c &= \left(\frac{2b}{\pi}\right)^{1/4} \\
+        \Aboxed{\psi_{\text{norm}} &= \left(\frac{2b}{\pi}\right)^{1/4} e^{-bx^2}}
+    \end{align*}
+
+    \newpage
+    \item Problem 3 (3.5)
+    
+    \begin{align*}
+        \psi^*\psi &= 4 c_1^2 \cos^2 \left(kx\right) \\
+        \frac{d\left(\psi^*\psi\right)}{dx} &= 4 c_1^2 k \left[-2 \cos\left(kx\right) \sin\left(kx\right)\right] \\
+        &= -8 c_2^2 k \cos\left(kx\right) \sin\left(kx\right) \\
+        \intertext{At maximum}
+        \frac{d\left(\psi^*\psi\right)}{dx} &= 0 \\
+        -8 c_2^2 k \cos\left(kx\right) \sin\left(kx\right) &= 0 \\
+        \cos\left(kx\right) &= 0 \text{ @ $kx=\frac{\pi}{2}$, $\frac{3\pi}{2}$} \\
+        \sin\left(kx\right) &= 0 \text{ @ $kx=0$, $\pi$, $2\pi$} \\
+        \intertext{Local maxima and minima @:}
+        \Aboxed{kx &= 0, \frac{\pi}{2}, \pi, \frac{3\pi}{2}, 2\pi}
+    \end{align*}
+    
+    \newpage
+    \item Problem 4 (3.6)
+    
+    \begin{align*}
+        P &= \psi^*\psi dV \\
+        P &= \psi^*\psi \cdot 4\pi r^2 dr \\
+        P &= \frac{1}{\pi a_0^3} \int_0^{a_0} e^{-2r/a_0} \cdot 4\pi r^2 dr \\
+        &= \frac{4}{a_0^3} \int_0^{a_0} e^{-2r/a_0} r^2 dr \\
+        &= \frac{4}{a_0^3} \left(\frac{r^2e^{-2r/a_0}}{-2/a_0} + \frac{2a_0}{2} \int_0^{a_0} re^{-2r/a_0}dr\right) \\
+        &= \frac{4}{a_0^3} \left[\frac{r^2e^{-2r/a_0}}{-2/a_0} + a_0 \left(\frac{a_0re^{-2r}}{-2} + \frac{a_0}{2} \int_0^{a_0} e^{-2r/a_0}dr\right)\right] \\
+        &= \frac{4}{a_0^3} \left[\frac{r^2e^{-2r/a_0}}{-2/a_0} + a_0 \left(\frac{a_0re^{-2r/a_0}}{-2} + \frac{a_0}{2} \frac{-a_0}{2}e^{-2r/a_0}\right)_0^{a_0}\right] \\
+        &= \frac{-a_0}{2}e^{-2} - \frac{a_0^3}{2}e^{-2} - \frac{a_0^3}{4}e^{-2} + 0 + 0 + \frac{a_0^3}{4} \\
+        P &= \frac{4}{a_0^3} \left[a_0^3 \left(\frac{-1}{2e^2} - \frac{1}{2e^2} - \frac{1}{4e^2} + \frac{1}{4}\right)\right] \\
+        \Aboxed{\text{Probability of $r\leq a_0$} &= 0.323}
+    \end{align*}
+    
+    \newpage
+    \item Problem 5 (3.11)
+    
+    a.
+
+    \begin{align*}
+        P_{1/2} &= \int_0^{a/2} \psi^*\psi dx \\
+        P_{1/2} &= \frac{2}{a} \int_0^{a/2} \sin^2\left(\frac{\pi x}{a}\right) dx \\
+        P_{1/2} &= \frac{2}{a} \left[\frac{1}{2}x - \frac{1}{4} \cdot \frac{a}{\pi} \sin\left(\frac{2\pi x}{a}\right) \right]_0^{a/2} \\
+        P_{1/2} &= \frac{2}{a} \left[\frac{1}{2} \cdot \frac{a}{2} - \frac{1}{4} \cdot \frac{a}{\pi} \sin\left(\frac{2\pi \cdot \frac{a}{2}}{a}\right) \right]_0^{a/2} \\
+        \Aboxed{P_{1/2} &= \frac{1}{2}}
+    \end{align*}
+
+    b.
+
+    \begin{align*}
+        P_{1/3} &= \int_{a/3}^{2a/3} \psi^*\psi dx \\
+        P_{1/3} &= \frac{2}{a} \int_{a/3}^{2a/3} \sin^2\left(\frac{\pi x}{a}\right) dx \\
+        P_{1/3} &= \frac{2}{a} \left[\frac{1}{2}x - \frac{1}{4} \cdot \frac{a}{\pi} \sin\left(\frac{2\pi x}{a}\right) \right]_{a/3}^{2a/3} \\
+        P_{1/3} &= \frac{2}{a} \left[\left(\frac{1}{2} \cdot \frac{2a}{3} - \frac{1}{4} \cdot \frac{a}{\pi} \sin\left(\frac{2\pi \cdot \frac{2a}{3}}{a}\right)\right) - \left(\frac{1}{2} \cdot \frac{a}{3} - \frac{1}{4} \cdot \frac{a}{\pi} \sin\left(\frac{2\pi \cdot \frac{a}{3}}{a}\right)\right)\right] \\
+        \Aboxed{P_{1/3} &= 0.609}
+    \end{align*}
+
+    \newpage
+    \item Problem 6 (3.12)
+    
+    \begin{align*}
+        P(r) &= 4 \pi r^2 \psi^2 \\
+        \psi (r) &= \left(\frac{1}{\pi a_0^3}\right)^{1/2} \text{e}^{-r/a_0} \\
+        P(r) &= 4 \pi r^2 \left(\frac{1}{\pi a_0^3}\right) \text{e}^{-2r/a_0} \\
+        \frac{dP}{dr} &= \frac{4}{a_0^3} \left(2r\text{e}^{-2r/a_0} + \frac{-2r^2}{a_0} \text{e}^{-2r/a_0}\right) \\
+        \intertext{At maximum $P(r)$}
+        \frac{dP}{dr} &= 0 \\
+        0 &= \frac{4}{a_0^3} \left(2r\text{e}^{-2r/a_0} + \frac{-2r^2}{a_0} \text{e}^{-2r/a_0}\right) \\
+        0 &= 1 - \frac{r}{a_0} \\
+        \Aboxed{r &= a_0}
+    \end{align*}
+
+    \newpage
+    \item Problem 7 (3.15)
+    
+    \begin{align*}
+        \Delta x \Delta p \leq \frac{\hbar}{2} \\
+        & v = 5.00 \cdot 10^{3} \text{ m/s } \pm 0.15 \text{ m/s} \\
+        \Delta v &= 0.3 \text{ m/s} \\
+        \Delta p &= m \Delta v \\
+        \Delta p &= 9.11 \cdot 10^{-31} \cdot 0.3 \\
+        \Delta p &= 2.733 \cdot 10^{-31} \\
+        \Delta x &= \frac{\frac{h}{2\pi}}{2 \Delta p} \\
+        \Delta x &= \frac{6.626 \cdot 10^{-34}}{2\pi \cdot 2 \cdot 2.733 \cdot 10^{-31}} \\
+        \Aboxed{\Delta x &= 1.929 \cdot 10^{-4} \text{ m}}
+    \end{align*}
+
+\end{enumerate}
+
+\end{document}
